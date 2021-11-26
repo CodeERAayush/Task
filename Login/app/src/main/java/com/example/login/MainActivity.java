@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 TextView text;
@@ -22,15 +23,16 @@ EditText edit,res;
         res=(EditText) findViewById(R.id.res);
     }
     public void checkPass(View v){
-        String stlog= edit.getText().toString();
-        if(stlog.equals("up53ca4224")){
-            res.setText("correct password");
+        String stlog= res.getText().toString();
+        String stUser=edit.getText().toString();
+        if(stlog.equals("Aayush")&&stUser.equals("TwoWaits")){
+            Toast.makeText(this, "Login Success", Toast.LENGTH_SHORT).show();
         }
         else if(stlog.equals("")){
             res.setText("enter pass");
         }
         else{
-            res.setText("incorrect pass!");
+            Toast.makeText(this, "incorrect Username or password", Toast.LENGTH_SHORT).show();
         }
     }
 }
